@@ -13,6 +13,7 @@ using System.Text;
 using System.Runtime;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics.Tracing;
 
 namespace PasswordGenerator
 {
@@ -102,9 +103,9 @@ namespace PasswordGenerator
 			}
 			
 			for (int i = 0; i < c_lenght; i++){
-				String c_getSys = catetogry_Sympb.ElementAt(random.Next() % catetogry_Sympb.Count);
-				int position = random.Next() % catetogry_Sympb.Count;
-				password.Append(c_getSys.ElementAt(position));
+				String c_getSys = catetogry_Sympb[random.Next(catetogry_Sympb.Count)];
+				int position = (int)(random.Next(c_getSys.Count()));
+				password.Append(c_getSys[position]);
 			}
 			
 			return password.ToString();
