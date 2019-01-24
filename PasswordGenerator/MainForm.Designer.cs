@@ -7,20 +7,17 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
  
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
  
 namespace PasswordGenerator
 {
 	partial class MainForm
 	{
-		/// <summary>
-		/// Designer variable used to keep track of non-visual components.
-		/// </summary>
 		private System.ComponentModel.IContainer components = null;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.ComboBox comboBox1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.DomainUpDown domainUpDown1;
 		private System.Windows.Forms.NumericUpDown numericUpDown1;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.CheckBox checkBox1;
@@ -28,10 +25,6 @@ namespace PasswordGenerator
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Button button1;
 		
-		/// <summary>
-		/// Disposes resources used by the form.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing) {
@@ -42,11 +35,6 @@ namespace PasswordGenerator
 			base.Dispose(disposing);
 		}
 		
-		/// <summary>
-		/// This method is required for Windows Forms designer support.
-		/// Do not change the method contents inside the source code editor. The Forms designer might
-		/// not be able to load this method if it was changed manually.
-		/// </summary>
 		private void InitializeComponent()
 		{
 			this.label1 = new System.Windows.Forms.Label();
@@ -73,10 +61,6 @@ namespace PasswordGenerator
 			// 
 			this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Items.AddRange(new object[] {
-			"Пароль из цифр",
-			"Пароль из букв",
-			"Пароль из пароль из букв и цифр"});
 			this.comboBox1.Location = new System.Drawing.Point(12, 17);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(209, 21);
@@ -84,7 +68,7 @@ namespace PasswordGenerator
 			// 
 			// label2
 			// 
-			this.label2.Location = new System.Drawing.Point(12, 42);
+			this.label2.Location = new System.Drawing.Point(12, 47);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(100, 15);
 			this.label2.TabIndex = 2;
@@ -92,7 +76,7 @@ namespace PasswordGenerator
 			// 
 			// numericUpDown1
 			// 
-			this.numericUpDown1.Location = new System.Drawing.Point(97, 40);
+			this.numericUpDown1.Location = new System.Drawing.Point(97, 45);
 			this.numericUpDown1.Name = "numericUpDown1";
 			this.numericUpDown1.ReadOnly = true;
 			this.numericUpDown1.Size = new System.Drawing.Size(57, 20);
@@ -101,7 +85,7 @@ namespace PasswordGenerator
 			// 
 			// label3
 			// 
-			this.label3.Location = new System.Drawing.Point(154, 42);
+			this.label3.Location = new System.Drawing.Point(154, 47);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(67, 23);
 			this.label3.TabIndex = 4;
@@ -127,6 +111,7 @@ namespace PasswordGenerator
 			// 
 			// textBox1
 			// 
+			this.textBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.textBox1.Location = new System.Drawing.Point(12, 126);
 			this.textBox1.Multiline = true;
 			this.textBox1.Name = "textBox1";
@@ -134,6 +119,7 @@ namespace PasswordGenerator
 			this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.textBox1.Size = new System.Drawing.Size(209, 97);
 			this.textBox1.TabIndex = 7;
+			this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// button1
 			// 
@@ -143,6 +129,7 @@ namespace PasswordGenerator
 			this.button1.TabIndex = 8;
 			this.button1.Text = "Сгенерировать пароль";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.Button1Click);
 			// 
 			// MainForm
 			// 
@@ -166,8 +153,7 @@ namespace PasswordGenerator
 			this.TopMost = true;
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
 			this.ResumeLayout(false);
-			this.PerformLayout();
-
+			this.PerformLayout();	
 		}
 	}
 }
