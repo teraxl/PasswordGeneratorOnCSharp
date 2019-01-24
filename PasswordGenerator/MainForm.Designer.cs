@@ -49,7 +49,6 @@ namespace PasswordGenerator
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.label1 = new System.Windows.Forms.Label();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.label2 = new System.Windows.Forms.Label();
@@ -135,7 +134,6 @@ namespace PasswordGenerator
 			this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.textBox1.Size = new System.Drawing.Size(209, 97);
 			this.textBox1.TabIndex = 7;
-			this.textBox1.Text = resources.GetString("textBox1.Text");
 			// 
 			// button1
 			// 
