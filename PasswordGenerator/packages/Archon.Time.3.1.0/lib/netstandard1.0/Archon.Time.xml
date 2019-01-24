@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Archon.Time</name>
+    </assembly>
+    <members>
+        <member name="T:Archon.DateTimeExtensions">
+            <summary>
+            Provides utility extension methods to DateTime
+            </summary>
+        </member>
+        <member name="M:Archon.DateTimeExtensions.AssumeUtc(System.DateTime,System.String)">
+            <summary>
+            Assume the DateTime is UTC. If the kind is unspecified, it will be coerced to UTC. If the kind is Local, an ArgumentException will be thrown.
+            </summary>
+            <param name="date">The datetime to check</param>
+            <param name="name">The name of the parameter being checked (to be used when throwing an exception)</param>
+            <returns>The specified DateTime but with a kind of UTC</returns>
+        </member>
+        <member name="M:Archon.DateTimeExtensions.AssumeUtc(System.Nullable{System.DateTime},System.String)">
+            <summary>
+            Assume the DateTime is UTC. If the kind is unspecified, it will be coerced to UTC. If the kind is Local, an ArgumentException will be thrown.
+            </summary>
+            <param name="date">The datetime to check</param>
+            <param name="name">The name of the parameter being checked (to be used when throwing an exception)</param>
+            <returns>The specified DateTime but with a kind of UTC</returns>
+        </member>
+        <member name="T:Archon.FrozenSystemClock">
+            <summary>
+            Frozen implementation of SystemClock
+            </summary>
+        </member>
+        <member name="P:Archon.FrozenSystemClock.UtcNow">
+            <summary>
+            Gets the current frozen time in UTC
+            </summary>
+        </member>
+        <member name="P:Archon.FrozenSystemClock.Now">
+            <summary>
+            Gets the current frozen time in local time
+            </summary>
+        </member>
+        <member name="M:Archon.FrozenSystemClock.#ctor">
+            <summary>
+            Creates a new instance using the current UTC time as the frozen time
+            </summary>
+        </member>
+        <member name="M:Archon.FrozenSystemClock.#ctor(System.DateTime)">
+            <summary>
+            Creates a new instance using the specified UTC frozen time
+            </summary>
+            <param name="frozenTimeUtc">The UTC time to freeze</param>
+        </member>
+        <member name="M:Archon.FrozenSystemClock.Reset">
+            <summary>
+            Reset the current frozen time to DateTime.UtcNow
+            </summary>
+        </member>
+        <member name="M:Archon.FrozenSystemClock.Reset(System.DateTime)">
+            <summary>
+            Reset the current frozen time to the specified UTC time
+            </summary>
+            <param name="frozenTimeUtc">The UTC time to freeze</param>
+        </member>
+        <member name="M:Archon.FrozenSystemClock.AddYears(System.Int32)">
+            <summary>
+            Add years to the current frozen time
+            </summary>
+            <param name="value">The number of years</param>
+        </member>
+        <member name="M:Archon.FrozenSystemClock.AddMonths(System.Int32)">
+            <summary>
+            Add months to the current frozen time
+            </summary>
+            <param name="value">The number of months</param>
+        </member>
+        <member name="M:Archon.FrozenSystemClock.AddDays(System.Double)">
+            <summary>
+            Add days to the current frozen time
+            </summary>
+            <param name="value">The number of days</param>
+        </member>
+        <member name="M:Archon.FrozenSystemClock.AddHours(System.Double)">
+            <summary>
+            Add hours to the current frozen time
+            </summary>
+            <param name="value">The number of hours</param>
+        </member>
+        <member name="M:Archon.FrozenSystemClock.AddMinutes(System.Double)">
+            <summary>
+            Add minutes to the current frozen time
+            </summary>
+            <param name="value">The number of minutes</param>
+        </member>
+        <member name="M:Archon.FrozenSystemClock.AddSeconds(System.Double)">
+            <summary>
+            Add seconds to the current frozen time
+            </summary>
+            <param name="value">The number of seconds</param>
+        </member>
+        <member name="M:Archon.FrozenSystemClock.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance is equal to a specified object.
+            </summary>
+            <param name="obj">The object to compare to this instance.</param>
+            <returns>true if value is an instance of System.DateTime or FrozenSystemClock and equals the value of this instance's frozen time; otherwise, false.</returns>
+        </member>
+        <member name="M:Archon.FrozenSystemClock.GetHashCode">
+            <summary>
+            Gets the hash code of the current frozen time
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Archon.FrozenSystemClock.ToString">
+            <summary>
+            Returns the current frozen time as a string
+            </summary>
+            <returns>The current frozen time as a string</returns>
+        </member>
+        <member name="T:Archon.RealSystemClock">
+            <summary>
+            Implementation of SystemClock which just uses the current DateTime.UtcNow
+            </summary>
+        </member>
+        <member name="P:Archon.RealSystemClock.UtcNow">
+            <summary>
+            The current time in UTC
+            </summary>
+        </member>
+        <member name="P:Archon.RealSystemClock.Now">
+            <summary>
+            The current time in local time
+            </summary>
+        </member>
+        <member name="T:Archon.SystemClock">
+            <summary>
+            Aids in unit testing by providing a mockable way to get the current time.
+            </summary>
+        </member>
+        <member name="P:Archon.SystemClock.UtcNow">
+            <summary>
+            Gets the current time in UTC
+            </summary>
+        </member>
+        <member name="P:Archon.SystemClock.Now">
+            <summary>
+            Gets the current local time
+            </summary>
+        </member>
+    </members>
+</doc>
