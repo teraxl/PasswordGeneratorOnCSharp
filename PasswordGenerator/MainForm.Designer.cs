@@ -60,11 +60,15 @@ namespace PasswordGenerator
 			// comboBox1
 			// 
 			this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBox1.Items.AddRange(new object[] {
+			                              "Пароль из цифр",
+			                              "Пароль из букв",
+			                              "Пароль из букв и цифр"});
 			this.comboBox1.FormattingEnabled = true;
 			this.comboBox1.Location = new System.Drawing.Point(12, 17);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(209, 21);
-			this.comboBox1.TabIndex = 1;
+			this.comboBox1.SelectedItem = 1;
 			// 
 			// label2
 			// 
@@ -82,6 +86,8 @@ namespace PasswordGenerator
 			this.numericUpDown1.Size = new System.Drawing.Size(57, 20);
 			this.numericUpDown1.TabIndex = 0;
 			this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.numericUpDown1.Value = 8;
+			this.numericUpDown1.Minimum = 6;
 			// 
 			// label3
 			// 
