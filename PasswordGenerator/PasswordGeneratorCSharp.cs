@@ -52,6 +52,10 @@ namespace PasswordGenerator
 				PassGenBuilder.useRusSym = rusSym;
 				return this;
 			}
+			public static PassGenBuilder m_useEngSym(bool rusSym){
+				PassGenBuilder.useRusSym = rusSym;
+				return this;
+			}
 		}
 		
 		public string resultGeneratePassword(int count){
