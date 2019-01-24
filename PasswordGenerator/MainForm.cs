@@ -27,7 +27,7 @@ namespace PasswordGenerator
 			textBox1.Text = new PasswordGeneratorCSharp.PassGenBuilder()
 				.m_useDigits(true)
 				.m_useEngSym(true)
-				.build().resultGeneratePassword(20);
+				.build().resultGeneratePassword((int)this.numericUpDown1.Value);
 		}
 	}
 }
