@@ -29,7 +29,7 @@ namespace PasswordGenerator
 		public bool usePunctuation;
 		
 		private static long nanoTime() {
-			long nano = 10000L * Stopwatch.GetTimestamp();
+			long nano = 1000L * Stopwatch.GetTimestamp();
 			nano /= TimeSpan.TicksPerMillisecond;
 			return nano;
 			
