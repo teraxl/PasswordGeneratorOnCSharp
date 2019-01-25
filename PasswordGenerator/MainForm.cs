@@ -22,5 +22,12 @@ namespace PasswordGenerator
 		{
 			InitializeComponent();
 		}
+		void Button1Click(object sender, EventArgs e)
+		{
+			textBox1.Text = new PasswordGeneratorCSharp.PassGenBuilder()
+				.m_useDigits(true)
+				.m_useEngSym(true)
+				.build().resultGeneratePassword((int)this.numericUpDown1.Value);
+		}
 	}
 }
