@@ -25,11 +25,6 @@ namespace PasswordGenerator
 		}
 		void Button1Click(object sender, EventArgs e)
 		{
-			var pwdG = new PasswordGeneratorCSharp.PassGenBuilder();
-			var pwd = pwdG.build();
-			
-			textBox1.Text = pwd.returnString(pwdG, 8);
-			
 //			textBox1.Text = new PasswordGeneratorCSharp.PassGenBuilder()
 //				.m_useDigits(true)
 //				.m_useEngSym(true)
