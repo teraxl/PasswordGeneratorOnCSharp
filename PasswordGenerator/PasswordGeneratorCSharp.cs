@@ -14,6 +14,9 @@ using System.Runtime;
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics.Tracing;
+using System.Windows.Forms;
+//using System.Timers;
+using System.Threading;
 
 namespace PasswordGenerator
 {
@@ -28,10 +31,21 @@ namespace PasswordGenerator
 		public bool useDigits;
 		public bool usePunctuation;
 		
-		private static long nanoTime() {
-			long nano = 1000L * Stopwatch.GetTimestamp();
+		public static int x = 0;
+		public static TimerCallback tm = new TimerCallback(timerCounter);
+		System.Threading.Timer timer = new System.Threading.Timer(tm, null, 0, 500);
+		public static int randNano = 0;
+		
+		public static void timerCounter(object obj){
+			
+			Trace.TraceInformation("{0}", nanoTime());
+				randNano = (int)obj;
+		}
+		
+		public static int nanoTime() {
+			long nano = 10000L * Stopwatch.GetTimestamp();
 			nano /= TimeSpan.TicksPerMillisecond;
-			return nano;
+			return (int)nano;
 			
 		}
 		
@@ -85,10 +99,10 @@ namespace PasswordGenerator
 				return "";
 			}
 			
-			StringBuilder password = new StringBuilder(c_lenght);
-			Random random = new Random((int)nanoTime());
+			var password = new StringBuilder((int)c_lenght);
+			var random = new Random((int)nanoTime());
 			
-			List<String> catetogry_Sympb = new List<String>(4);
+			var catetogry_Sympb = new List<String>(4);
 			if (useDigits){
 				catetogry_Sympb.Add(DIGITS);
 			}
@@ -109,6 +123,17 @@ namespace PasswordGenerator
 			}
 			
 			return password.ToString();
+		}
+		
+		public string returnString(PassGenBuilder passgen, int numDigits = 8){
+			passgen = new PassGenBuilder();
+			switch(numDigits){
+				case 8:
+					passgen.m_useDigits(true);
+					passgen.m_useEngSym(true);
+					break;
+			}
+			return resultGeneratePassword(numDigits);
 		}
 		
 	}
