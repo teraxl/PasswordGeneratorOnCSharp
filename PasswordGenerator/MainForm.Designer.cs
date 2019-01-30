@@ -60,22 +60,16 @@ namespace PasswordGenerator
 			// comboBox1
 			// 
 			this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-<<<<<<< .mine
 			this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-
-
-
-=======
 			this.comboBox1.Items.AddRange(new object[] {
 			                              "Пароль из цифр",
 			                              "Пароль из букв",
 			                              "Пароль из букв и цифр"});
->>>>>>> .theirs
 			this.comboBox1.FormattingEnabled = true;
 			this.comboBox1.Location = new System.Drawing.Point(12, 17);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(209, 21);
-			this.comboBox1.SelectedItem = 1;
+			this.comboBox1.SelectedIndex = 0;
 			// 
 			// label2
 			// 
